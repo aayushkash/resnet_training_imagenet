@@ -13,12 +13,16 @@ def download_with_retry(max_retries=3, delay=5):
     Attempt to download the dataset with retries
     """
     force = False
+    cache_dir = Path.home() / '.cache' / 'kagglehub'  # Default kagglehub cache location
+    
+    print(f"Dataset will be downloaded to cache directory: {cache_dir}")
+    
     for attempt in range(max_retries):
         try:
             print(f"Download attempt {attempt + 1}/{max_retries}...")
             downloaded_path = kagglehub.dataset_download(
                 "mayurmadnani/imagenet-dataset",
-                force_download=force  # Force fresh download on retry
+                force_download=force
             )
             
             if isinstance(downloaded_path, list):
@@ -26,8 +30,10 @@ def download_with_retry(max_retries=3, delay=5):
             
             # Verify the download
             downloaded_path = Path(downloaded_path)
+            print(f"Dataset downloaded to: {downloaded_path}")
+            
             if not downloaded_path.exists():
-                raise FileNotFoundError("Download path does not exist")
+                raise FileNotFoundError(f"Download path does not exist: {downloaded_path}")
                 
             return downloaded_path
             
