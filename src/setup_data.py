@@ -18,7 +18,7 @@ def download_with_retry(max_retries=3, delay=5):
             print(f"Download attempt {attempt + 1}/{max_retries}...")
             downloaded_path = kagglehub.dataset_download(
                 "mayurmadnani/imagenet-dataset",
-                force=force  # Force fresh download on retry
+                force_download=force  # Force fresh download on retry
             )
             
             if isinstance(downloaded_path, list):
