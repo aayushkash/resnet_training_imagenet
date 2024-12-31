@@ -110,7 +110,7 @@ def setup_dataset():
         
     except Exception as e:
         print(f"Error setting up dataset: {str(e)}")
-        print("Please try running the setup script again.")
+        print("Please try running the setup script and test")
         sys.exit(1)
 
 def print_dataset_stats():
