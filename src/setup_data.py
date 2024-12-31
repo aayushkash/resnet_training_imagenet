@@ -39,7 +39,7 @@ def download_with_retry(max_retries=3, delay=5):
             
         except (BadZipFile, FileNotFoundError, requests.exceptions.RequestException) as e:
             print(f"Download attempt {attempt + 1} failed: {str(e)}")
-            force = True
+            force = False
             if attempt < max_retries - 1:
                 print(f"Waiting {delay} seconds before retrying...")
                 time.sleep(delay)
