@@ -54,7 +54,7 @@ def validate(model, val_loader, criterion, device):
 
 def main():
     # Setup dataset first
-    setup_dataset()
+    # setup_dataset()
     
     Config.setup_directories()
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')

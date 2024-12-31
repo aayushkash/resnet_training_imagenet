@@ -2,7 +2,7 @@ from pathlib import Path
 
 class Config:
     # Data paths
-    DATA_ROOT = Path("/home/ubuntu/imagenet_data")  # Default EC2 user home directory
+    DATA_ROOT = Path("/home/ubuntu/.cache/kagglehub/datasets/mayurmadnani/imagenet-dataset/versions/1")  # Default EC2 user home directory
     TRAIN_DIR = DATA_ROOT / "train"
     VAL_DIR = DATA_ROOT / "val"
     TEST_DIR = DATA_ROOT / "test"
