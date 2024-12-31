@@ -1,0 +1,4 @@
+train.out
+src/__pycache__
+logs
+models

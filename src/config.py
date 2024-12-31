@@ -28,7 +28,7 @@ class Config:
     
     # Debug mode (using 5% of data)
     DEBUG = True
-    DEBUG_FRACTION = 0.05
+    DEBUG_FRACTION = 0.5
     
     # Hugging Face
     HF_REPO_ID = "your-username/resnet50-imagenet"
